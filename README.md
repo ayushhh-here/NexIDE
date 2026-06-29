@@ -27,7 +27,7 @@ NexIDE is a fully browser-based development environment — no installs, no Dock
 
 It runs real Node.js applications directly inside the browser using the WebContainers API — the same technology that powers StackBlitz. The code editor is Monaco Editor, the exact same engine that runs VS Code. AI assistance is powered by locally running LLMs via Ollama, meaning there are zero API costs and your code never leaves your machine.
 
-This is my first major fullstack project. I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood — because using them as a black box was not enough. I wanted to know exactly how you run a Node.js process inside a browser tab.
+I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood — because using them as a black box was not enough. I wanted to know exactly how you run a Node.js process inside a browser tab.
 
 ---
 
