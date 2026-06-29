@@ -159,7 +159,7 @@ cp .env.example .env.local
 Open `.env.local` and fill in all required values:
 
 ```env
-# Database connection string
+# Database connection string (we recommend Neon — free PostgreSQL at neon.tech)
 DATABASE_URL="your_database_url"
 
 # NextAuth secret — generate with: openssl rand -base64 32
