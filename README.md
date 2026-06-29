@@ -15,9 +15,7 @@
 
 <br/>
 
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/ayushhh-here/NexIDE?color=CC0000&style=flat-square)](https://github.com/ayushhh-here/NexIDE/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/ayushhh-here/NexIDE?color=CC0000&style=flat-square)](https://github.com/ayushhh-here/NexIDE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ayushhh-here/NexIDE?color=CC0000&style=flat-square)](https://github.com/ayushhh-here/NexIDE/commits/main)
+
 
 </div>
 
