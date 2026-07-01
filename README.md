@@ -1,4 +1,4 @@
-# ⚡ NexIDE
+#  NexIDE
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 <br/>
 
 > **A browser-based AI-powered IDE — write, run, and deploy code**
-> **instantly with zero local setup.**
+> **with zero local setup.**
 
 <br/>
 
@@ -21,17 +21,17 @@
 
 ---
 
-## 🧠 What is NexIDE?
+##  What is NexIDE?
 
 NexIDE is a fully browser-based development environment — no installs, no Docker containers on your machine, no configuration required. You open a browser tab and start coding immediately.
 
 It runs real Node.js applications directly inside the browser using the WebContainers API — the same technology that powers StackBlitz. The code editor is Monaco Editor, the exact same engine that runs VS Code. AI assistance is powered by locally running LLMs via Ollama, meaning there are zero API costs and your code never leaves your machine.
 
-I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood — because using them as a black box was not enough. I wanted to know exactly how you run a Node.js process inside a browser tab.
+I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood — because using them as a black box was not enough.wanted to know exactly how you run a Node.js process inside a browser tab.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -66,22 +66,22 @@ I built it to deeply understand how tools like CodeSandbox and StackBlitz actual
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---|---|
-| 🔴 OAuth Authentication | Google and GitHub sign-in via NextAuth.js with full session management |
-| 🔴 Monaco Editor | VS Code-grade editor — syntax highlighting, IntelliSense, multi-file support |
-| 🔴 WebContainers Runtime | Runs real Node.js applications entirely inside the browser — no server execution |
-| 🔴 AI Assistant | Local LLM via Ollama — code chat sidebar, inline suggestions, zero API cost |
-| 🔴 Embedded Terminal | Full xterm.js terminal running in the browser, connected to the WebContainers process |
-| 🔴 File Explorer | Create, rename, delete files and folders — synced live to Monaco and WebContainers |
-| 🔴 8+ Starter Templates | React, Next.js, Vue, Express, Hono, Angular, Vanilla JS, and Node.js |
-| 🔴 Dark / Light Mode | Full theme switching via TailwindCSS and ShadCN UI components |
+|  OAuth Authentication | Google and GitHub sign-in via NextAuth.js with full session management |
+|  Monaco Editor | VS Code-grade editor — syntax highlighting, IntelliSense, multi-file support |
+|  WebContainers Runtime | Runs real Node.js applications entirely inside the browser — no server execution |
+|  AI Assistant | Local LLM via Ollama — code chat sidebar, inline suggestions, zero API cost |
+|  Embedded Terminal | Full xterm.js terminal running in the browser, connected to the WebContainers process |
+|  File Explorer | Create, rename, delete files and folders — synced live to Monaco and WebContainers |
+|  8+ Starter Templates | React, Next.js, Vue, Express, Hono, Angular, Vanilla JS, and Node.js |
+|  Dark / Light Mode | Full theme switching via TailwindCSS and ShadCN UI components |
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology | Why This Choice |
 |---|---|---|
@@ -97,7 +97,7 @@ I built it to deeply understand how tools like CodeSandbox and StackBlitz actual
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 NexIDE/
@@ -130,7 +130,7 @@ NexIDE/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -194,7 +194,7 @@ ollama serve
 
 ---
 
-## ▶️ Running the Project
+##  Running the Project
 
 ```bash
 npm run dev
@@ -206,10 +206,10 @@ The AI sidebar connects to your local Ollama instance. Type a prompt, paste code
 
 ---
 
-## 📚 What I Learned Building This
+##  What I Learned Building This
 
 **WebContainers and service workers**
-WebContainers registers a service worker that intercepts all `fetch` calls made from within the iframe. It simulates a complete POSIX file system in memory and maps Node.js module resolution to that virtual FS. Understanding this changed how I think about what browsers are actually capable of.
+WebContainers registers a service worker that intercepts all `fetch` calls made from within the iframe. It simulates a complete POSIX file system in memory and maps Node.js module resolution to that virtual FS. 
 
 **Next.js App Router architecture**
 This project forced me to properly understand the server/client component boundary. The auth layer runs entirely server-side. The IDE workspace is a client component tree. Getting state to flow correctly between them required understanding how Next.js handles hydration and how `"use client"` propagates through a component tree.
@@ -222,7 +222,7 @@ Using Monaco as a controlled React component requires working with its internal 
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Live collaboration via WebRTC and CRDT-based conflict resolution
 - [ ] One-click deploy to Railway or Render from inside the IDE
