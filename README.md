@@ -5,7 +5,7 @@
 
 <br/>
 
-> **A browser-based AI-powered IDE — write, run, and deploy code**
+> **A browser-based AI-powered IDE - write, run, and deploy code**
 > **with zero local setup.**
 
 <br/>
@@ -18,11 +18,11 @@
 
 ##  What is NexIDE?
 
-NexIDE is a fully browser-based development environment — no installs, no Docker containers on your machine, no configuration required. You open a browser tab and start coding immediately.
+NexIDE is a fully browser-based development environment : no installs, no Docker containers on your machine, no configuration required. You open a browser tab and start coding immediately.
 
-It runs real Node.js applications directly inside the browser using the WebContainers API — the same technology that powers StackBlitz. The code editor is Monaco Editor, the exact same engine that runs VS Code. AI assistance is powered by locally running LLMs via Ollama, meaning there are zero API costs and your code never leaves your machine.
+It runs real Node.js applications directly inside the browser using the WebContainers API — the same technology that powers StackBlitz. The code editor is Monaco Editor, the exact same engine that runs VS Code. AI assistance is powered by locally running LLMs via Ollama, meaning there are zero API costs and your code just never leaves your machine.
 
-I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood — because using them as a black box was not enough.wanted to know exactly how you run a Node.js process inside a browser tab.
+I built it to deeply understand how tools like CodeSandbox and StackBlitz actually work under the hood - because using them as a black box was not enough.wanted to know exactly how you run a Node.js process inside a browser tab.
 
 ---
 
@@ -57,7 +57,7 @@ I built it to deeply understand how tools like CodeSandbox and StackBlitz actual
           └───────────────────────────┘
 ```
 
-**The key insight:** WebContainers intercepts all network requests made by Node.js running in the browser using a service worker and simulates a complete POSIX file system in memory. The backend only handles authentication and project state persistence — all code execution is entirely client-side.
+**The key insight:** WebContainers intercepts all network requests made by Node.js running in the browser using a service worker and simulates a complete POSIX file system in memory. The backend only handles authentication and project state persistence - all code execution is entirely client-side.
 
 ---
 
@@ -66,11 +66,11 @@ I built it to deeply understand how tools like CodeSandbox and StackBlitz actual
 | Feature | Description |
 |---|---|
 |  OAuth Authentication | Google and GitHub sign-in via NextAuth.js with full session management |
-|  Monaco Editor | VS Code-grade editor — syntax highlighting, IntelliSense, multi-file support |
+|  Monaco Editor | VS Code-grade editor - syntax highlighting, IntelliSense, multi-file support |
 |  WebContainers Runtime | Runs real Node.js applications entirely inside the browser — no server execution |
 |  AI Assistant | Local LLM via Ollama — code chat sidebar, inline suggestions, zero API cost |
 |  Embedded Terminal | Full xterm.js terminal running in the browser, connected to the WebContainers process |
-|  File Explorer | Create, rename, delete files and folders — synced live to Monaco and WebContainers |
+|  File Explorer | Create, rename, delete files and folders - synced live to Monaco and WebContainers |
 |  8+ Starter Templates | React, Next.js, Vue, Express, Hono, Angular, Vanilla JS, and Node.js |
 |  Dark / Light Mode | Full theme switching via TailwindCSS and ShadCN UI components |
 
@@ -81,13 +81,13 @@ I built it to deeply understand how tools like CodeSandbox and StackBlitz actual
 | Layer | Technology | Why This Choice |
 |---|---|---|
 | Framework | Next.js 15 (App Router) | Server and client components, API routes, and auth all in one framework |
-| Language | TypeScript | End-to-end type safety — catches file system and API shape errors at compile time |
+| Language | TypeScript | End-to-end type safety - catches file system and API shape errors at compile time |
 | Styling | TailwindCSS + ShadCN UI | Utility-first CSS with an accessible, composable component library |
-| Code Editor | Monaco Editor | The same engine as VS Code — battle-tested, feature-complete, extensible |
-| Browser Runtime | WebContainers API | Runs a real Node.js environment in a service worker — no backend execution needed |
-| AI Integration | Ollama (local LLMs) | Free, private, offline-capable AI — no cloud API key required |
+| Code Editor | Monaco Editor | The same engine as VS Code - battle-tested, feature-complete, extensible |
+| Browser Runtime | WebContainers API | Runs a real Node.js environment in a service worker - no backend execution needed |
+| AI Integration | Ollama (local LLMs) | Free, private, offline-capable AI - no cloud API key required |
 | Authentication | NextAuth.js | Handles OAuth token exchange, session cookies, and route protection |
-| Database | Prisma ORM | Type-safe schema-first ORM — auto-generated types from the database schema |
+| Database | Prisma ORM | Type-safe schema-first ORM - auto-generated types from the database schema |
 | Terminal | xterm.js | Full VT100-compatible terminal emulator built for the browser |
 
 ---
@@ -130,7 +130,7 @@ NexIDE/
 ### Prerequisites
 
 - Node.js 18+
-- Ollama installed locally — [ollama.ai](https://ollama.ai)
+- Ollama installed locally - [ollama.ai](https://ollama.ai)
 
 ### 1. Clone the repository
 
