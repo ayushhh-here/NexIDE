@@ -1,0 +1,82 @@
+import { scanTemplateDirectory } from "@/modules/playground/lib/path-to-json";
+import { db } from "@/lib/db";
+import { templatePaths } from "@/lib/template";
+import path from "path";
+import fs from "fs/promises";
+import { NextRequest } from "next/server";
+import { currentUser } from "@/modules/auth/actions";
+
+function validateJsonStructure(data: unknown): boolean {
+  try {
+    JSON.parse(JSON.stringify(data)); // Ensures it's serializable
+    return true;
+  } catch (error) {
+    console.error("Invalid JSON structure:", error);
+    return false;
+  }
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+
+  if (!id) {
+    return Response.json({ error: "Missing playground ID" }, { status: 400 });
+  }
+
+  const user = await currentUser();
+  if (!user?.id) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const playground = await db.playground.findUnique({
+    where: { id, userId: user.id },
+  });
+
+  if (!playground) {
+    return Response.json({ error: "Playground not found" }, { status: 404 });
+  }
+
+  const templateKey = playground.template as keyof typeof templatePaths;
+  const templatePath = templatePaths[templateKey];
+
+  if (!templatePath) {
+    return Response.json({ error: "Invalid template" }, { status: 404 });
+  }
+
+  try {
+    const inputPath = path.join(process.cwd(), templatePath);
+
+    try {
+      await fs.stat(inputPath);
+    } catch {
+      console.error(`Template directory not found: ${inputPath}`);
+      return Response.json({ 
+        error: "Template directory not found", 
+        templatePath: inputPath 
+      }, { status: 404 });
+    }
+
+    // scanTemplateDirectory already returns the full structure - no need to
+    // write it to a file on disk and immediately read it back. That extra
+    // round trip also wrote to process.cwd()/output, which fails on
+    // read-only serverless filesystems (e.g. Vercel) and, since the
+    // filename was keyed only by template type, could race with a
+    // concurrent request for the same template.
+    const result = await scanTemplateDirectory(inputPath);
+
+    if (!validateJsonStructure(result.items)) {
+      return Response.json({ error: "Invalid JSON structure" }, { status: 500 });
+    }
+
+    return Response.json({ success: true, templateJson: result }, { status: 200 });
+  } catch (error) {
+    console.error("Error generating template JSON:", error);
+    return Response.json({ 
+      error: "Failed to generate template",
+      details: error instanceof Error ? error.message : "Unknown error"
+    }, { status: 500 });
+  }
+}
