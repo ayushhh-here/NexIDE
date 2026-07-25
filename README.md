@@ -3,7 +3,6 @@
 <div align="center">
 
 [![CI](https://github.com/ayushhh-here/NexIDE/actions/workflows/ci.yml/badge.svg)](https://github.com/ayushhh-here/NexIDE/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 <br/>
 
@@ -254,7 +253,7 @@ Using Monaco as a controlled React component requires working with its internal 
 
 ## Roadmap
 
-- [ ] CI pipeline with GitHub Actions (lint, test, build)
+- [x] CI pipeline with GitHub Actions (lint, test, build)
 - [x] Unit tests for core code-analysis logic
 - [ ] Live collaboration via WebRTC and CRDT-based conflict resolution
 - [ ] One-click deploy to Railway or Render from inside the IDE
