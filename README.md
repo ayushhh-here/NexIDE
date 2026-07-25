@@ -12,7 +12,6 @@
 
 <br/>
 
-![NexIDE screenshot](./public/thumbnail.webp)
 
 </div>
 
