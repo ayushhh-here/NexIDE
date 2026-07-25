@@ -254,7 +254,7 @@ Using Monaco as a controlled React component requires working with its internal 
 
 ## Roadmap
 
-- [x] CI pipeline with GitHub Actions (lint, test, build)
+- [ ] CI pipeline with GitHub Actions (lint, test, build)
 - [x] Unit tests for core code-analysis logic
 - [ ] Live collaboration via WebRTC and CRDT-based conflict resolution
 - [ ] One-click deploy to Railway or Render from inside the IDE
