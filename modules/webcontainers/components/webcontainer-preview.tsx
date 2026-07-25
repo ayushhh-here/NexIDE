@@ -365,7 +365,7 @@ const WebContainerPreview = ({
           <div className="flex-1 p-4">
             <TerminalComponent
               ref={terminalRef}
-              webContainerInstance={instance}
+             webContainerInstance={instance ?? undefined}
               theme="dark"
               className="h-full"
             />
@@ -384,7 +384,7 @@ const WebContainerPreview = ({
           <div className="h-64 border-t">
             <TerminalComponent
               ref={terminalRef}
-              webContainerInstance={instance}
+             webContainerInstance={instance ?? undefined}
               theme="dark"
               className="h-full"
             />

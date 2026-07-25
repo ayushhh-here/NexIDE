@@ -158,12 +158,13 @@ export const PlaygroundEditor = ({
       const currentPosition = editor.getPosition()
       const suggestionPos = currentSuggestion.position
 
-      // Verify we're still at the suggestion position
-      if (
-        currentPosition.lineNumber !== suggestionPos.line ||
-        currentPosition.column < suggestionPos.column ||
-        currentPosition.column > suggestionPos.column + 5
-      ) {
+     // Verify we're still at the suggestion position
+if (
+  !currentPosition ||
+  currentPosition.lineNumber !== suggestionPos.line ||
+  currentPosition.column < suggestionPos.column ||
+  currentPosition.column > suggestionPos.column + 5
+) {
         return false
       }
 
@@ -221,7 +222,7 @@ export const PlaygroundEditor = ({
 
     const position = editorRef.current.getPosition()
     const suggestion = currentSuggestionRef.current
-
+if (!position) return false
     return (
       position.lineNumber === suggestion.position.line &&
       position.column >= suggestion.position.column &&
